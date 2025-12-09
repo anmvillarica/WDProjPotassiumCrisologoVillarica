@@ -1,4 +1,4 @@
-const LEVEL1_STR = ["transform:", "255,0,0", "}"]
+const LEVEL1_STR = ["transform:", "0,0,255", "}"]
 const LEVEL2_STR = ["document.getElementbyId", "i = 0", "break"]
 const LEVEL3_STR = ["font-family:", "align-items:", "flexbox"]
 var levelSelector = 0; 
@@ -37,7 +37,10 @@ function checkInput(){
         alert(incorrect[i]);
     if (incorrect.length == 0)
     {
+        sprite.innerHTML = "<img src='../media/sprites/pengy2.png' alt='Pengy'>";
         sprite.style.animation = `5s linear level1animation`;
-        sprite.style.transform = "translateX(80px)";
+        setTimeout(() => {
+            sprite.style.transform = `translateX(80px)`;
+            }, 5000); // 5000 milliseconds = 5 seconds
     }
 }

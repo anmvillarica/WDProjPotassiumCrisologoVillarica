@@ -80,7 +80,7 @@ li.code_area {
 }
 
 @keyframes level1animation{
-    100% {transform: translateX(80px); background-color: rgb(255,0,0);}
+    100% {transform: translateX(80px);}
 }
 
 /* GAME PROPER */
