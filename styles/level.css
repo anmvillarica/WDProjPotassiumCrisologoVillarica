@@ -4,8 +4,8 @@
 }
 
 body {
-    background-color: #262626;
-    color: white;
+    color: #262626;
+    background-color: white;
     width: 100vw; height: 100vh;
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 22px;
@@ -37,7 +37,7 @@ ul.navbar li {
 }
 
 ul.navbar a {
-    color: white;
+    color: #262626;
     text-decoration: none;
     font-size: 26px;
     transition: 0.25s;
@@ -76,18 +76,33 @@ li.code_area {
     display: flex; 
     width: auto; height: 35vh; 
     z-index: 500;
-    left: 10vw; top: 50vh;
+    left: 10vw; top: 52vh;
 }
 
 @keyframes level1animation{
-    50% {transform: translateX(40px) translateY(-15px);}
-    100% {transform: translateX(40px) translateY(15px);}
+    50% {transform: translateX(50px); opacity: 25%;}
+    100% {transform: translateX(100px); opacity: 50%;}
 }
 
 /* GAME PROPER */
+#directions {
+    background-color: #262626; color: white; 
+    width: 70vw; right: 15vw; position: fixed; top: 3vh; 
+    text-align: center; 
+    border-radius: 5px;
+}
 #code_area {
     position: absolute; 
-    right: 25vw; top: 20vh; 
-    background-color: white; color: #262626;
-    padding: 0.5%; border-radius: 5px;
+    right: 20vw; top: 20vh; 
+    color: white; background-color: #262626;
+    padding: 1%; border-radius: 5px;
+}
+
+#progress_bar {
+    background-color: #262626;
+    position: absolute; 
+    height: 5vh; width: 80vw; 
+    right: 10vw; bottom: 3vh; 
+    border-radius: 5px; 
+    
 }

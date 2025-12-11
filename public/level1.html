@@ -12,24 +12,20 @@
         <meta name="author" content="Crisologo & Villarica">
     </head>
 
-    <body style="background-image: url(../media/game_bgs/snow.png); background-size: contain;">
+    <body style="background-image: url(../media/game_bgs/snowbg.png); background-size: contain; background-repeat: repeat-x;">
         <header> 
             <ul class="navbar">
                 <li id="home"><a href="../index.html">
                 <i class="fa fa-fw fa-home homeicon"></i>
                 </a></li>
-
                 <li>
-                    <span id="level_details"> 
-                        <p><b>Easy</b> Level</p>
-                        <p style="background-color: #08ff98; color: #262626; border-radius: 5px;">Save</p>
-                    </span>
+                    <p id="level_details"><b>Easy</b> Level</p>
                 </li>
             </ul>
         </header>
 
         <div id="directions">
-            <h3>Make the sprite move up by 80 pixels and turn it blue!</h3>
+            <h3>Make the sprite move up by 100 pixels and turn it blue!</h3>
         </div>
         
         <div id="sprite">
@@ -40,11 +36,11 @@
             <h2>Complete the code!</h2>
             <span>
                 <h3>level1.css</h4>
-                <ul>
+                <ul style="list-style-type: none;">
                     <li><p>#sprite {</p></li>
                     <li>
                         <input id="blank1" type="text">
-                        <p>translateX(80px);</p>
+                        <p>translateX(100px);</p>
                     </li>
                     <li>
                         <p>color: rgb(</p>
@@ -55,6 +51,12 @@
                 </ul>
             </span>
             <button id="submit_btn" onclick="checkInput(1)">Submit!</button>
+        </div>
+
+        <div id="progress_bar">
+            <pre id="bar1">     </pre>
+            <pre id="bar2">     </pre>
+            <pre id="bar3">     </pre>
         </div>
 
         <script src="../javascript/level.js"></script>
