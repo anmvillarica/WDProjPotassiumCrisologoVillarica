@@ -6,7 +6,15 @@ var levelSelector = 0;
 var sbt = document.getElementById("submit_btn");
 var sprite = document.getElementById("sprite");
 
-function checkInput(){
+var bar1 = document.getElementById("bar1");
+var bar2 = document.getElementById("bar2");
+var bar3 = document.getElementById("bar3");
+
+var progress_bar = document.getElementById("progress_bar");
+
+function checkInput(level){
+    progress_bar.style.backgroundColor = "#262626";
+
     var incorrect = [];
 
     for (let i = 0; i < 3; i++)
@@ -15,7 +23,7 @@ function checkInput(){
         var id = "blank" + (i + 1);
         var var_name = document.getElementById(id).value;
 
-        switch(levelSelector)
+        switch(level)
         {
             case 1: 
                 if (var_name != LEVEL1_STR[i])
@@ -33,8 +41,13 @@ function checkInput(){
         
     }
 
-    for (let i = 0; i < incorrect.length; i++)
-        alert(incorrect[i]);
+    if (incorrect.length == 2)
+    {
+        bar1.style.backgroundColor = "white";
+        if (incorrect.length == 1)
+            bar2.style.backgroundColor = "white"
+        
+    }
     if (incorrect.length == 0)
     {
         sprite.style.animation = `1s ease level1animation`;
@@ -44,3 +57,4 @@ function checkInput(){
             }, 1000);
     }
 }
+

@@ -4,6 +4,7 @@
 }
 
 body {
+    overflow-x: hidden; overflow-y: hidden;
     color: #262626;
     background-color: white;
     width: 100vw; height: 100vh;
@@ -100,9 +101,23 @@ li.code_area {
 
 #progress_bar {
     background-color: #262626;
-    position: absolute; 
-    height: 5vh; width: 80vw; 
-    right: 10vw; bottom: 3vh; 
+    position: absolute; display: flex; 
+    height: 5vh; width: 87vw; 
+    right: 6.5vw; bottom: 3vh; 
     border-radius: 5px; 
-    
+}
+
+#bar1 {
+    z-index: 3;
+    width: 29vw; 
+}
+
+#bar2 {
+    z-index: 2;
+    width: 29vw; 
+}
+
+#bar3 {
+    z-index: 1;
+    width: 29vw; 
 }
