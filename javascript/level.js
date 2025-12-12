@@ -17,6 +17,10 @@ function checkInput(level){
 
     var incorrect = [];
 
+    for (let i = 0; i < incorrect.length; i++)
+        incorrect.pop; 
+
+
     for (let i = 0; i < 3; i++)
     {
         var var_name = "inp" + (i + 1);
