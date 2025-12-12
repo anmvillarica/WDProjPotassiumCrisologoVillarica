@@ -13,7 +13,7 @@
     </head>
 
     <body style="background-image: url(../media/game_bgs/pondbg.png); background-size: contain; background-repeat: repeat-x;">
-        <header> 
+        <header class="level2"> 
             <ul class="navbar">
                 <li id="home"><a href="../index.html">
                 <i class="fa fa-fw fa-home homeicon"></i>
@@ -24,7 +24,7 @@
             </ul>
         </header>
 
-        <div id="directions">
+        <div id="directions" class="level2">
             <h3>Make the sprite swim (move) to the right and left for 3 laps!</h3>
         </div>
         
@@ -32,26 +32,26 @@
             <img src="../media/sprites/duck.png" alt="Ducky">
         </div>
 
-        <div id="code_area">
+        <div id="code_area" class="level2">
             <h2>Complete the code!</h2>
             <span>
-                <h3>level1.css</h4>
+                <h3>level2.js</h4>
                 <ul style="list-style-type: none;">
-                    <li><p>#sprite {</p></li>
                     <li>
+                        <p>var duck = </p>
                         <input id="blank1" type="text">
-                        <p>translateX(100px);</p>
+                        <p>("duck");</p>
                     </li>
                     <li>
-                        <p>color: rgb(</p>
+                        <p>for let (</p>
                         <input id="blank2">
-                        <p>);</p>
+                        <p>; i < 3; i++) {<p>
                     </li>
                     <li><input id="blank3"></li>
                 </ul>
             </span>
-            <button class="level1" id="submit_btn" onclick="checkInput(1)">Submit!</button>
-            <button class="level1" id="reset_btn" onclick="refresh()"><i class="fa fa-refresh"></i></button>
+            <button class="level2" id="submit_btn" onclick="checkInput(2)">Submit!</button>
+            <button class="level2" id="reset_btn" onclick="refresh(2)"><i class="fa fa-refresh"></i></button>
         </div>
 
         <div id="progress_bar">

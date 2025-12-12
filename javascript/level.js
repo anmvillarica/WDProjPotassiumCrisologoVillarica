@@ -20,8 +20,6 @@ var inp = "";
 var incorrect = [];
 
 function checkInput(level){
-    alert("this works");
-
     for (let i = 0; i < 3; i++)
     {
         var_name = "inp" + (i + 1);
@@ -66,11 +64,12 @@ function checkInput(level){
     }
 }
 
-function refresh() {    
-    alert("Gumagana to");
-    sprite.innerHTML = "<img src='../media/sprites/pengy1.png' alt='Pengy'>";
-    
-    sprite.style.transform = "translateX(0px)";
+function refresh(level) {    
+    if (level == 1)
+    {
+        sprite.innerHTML = "<img src='../media/sprites/pengy1.png' alt='Pengy'>";
+        sprite.style.transform = "translateX(0px)";
+    }
 
     bar1.style.backgroundColor = "#262626";
     bar2.style.backgroundColor = "#262626";
