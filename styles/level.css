@@ -82,7 +82,8 @@ li.code_area {
 
 @keyframes level1animation{
     50% {transform: translateX(50px); opacity: 25%;}
-    100% {transform: translateX(100px); opacity: 50%;}
+    75% {opacity: 75%;}
+    100% {transform: translateX(100px); opacity: 100%;}
 }
 
 /* GAME PROPER */
@@ -120,4 +121,13 @@ li.code_area {
 #bar3 {
     z-index: 1;
     width: 29vw; 
+}
+
+button.level1 {
+    background-color: #579dff;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 22px;
+    border-style: none;
+    border-radius: 5px;
+    margin: 5px; padding: 5px;  
 }
