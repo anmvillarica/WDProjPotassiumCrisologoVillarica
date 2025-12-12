@@ -13,9 +13,27 @@ body {
     padding-top: 75px; /* make space for fixed navbar */
 }
 
+button {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 22px;
+    border-style: none;
+    border-radius: 5px;
+    margin: 5px; padding: 5px;  
+}
+
+#directions {
+    color: #262626; background-color: white;
+    z-index: 1200; 
+}
+
+.indented {
+    text-indent: 25px; 
+}
+
 /* NAVBAR */
 
 ul.navbar {
+    background-color: #262626; color: white; 
     list-style: none;
     margin: 0;
     padding: 0 20px;
@@ -26,7 +44,6 @@ ul.navbar {
     top: 0;
     width: 100%;
     height: 70px;
-    background-color: inherit;
     z-index: 1000;
     gap: 82vw; 
 }
@@ -85,6 +102,14 @@ li.code_area {
     100% {transform: translateX(100px); opacity: 100%;}
 }
 
+@keyframes level2animation {
+    20% {transform: scaleX(-1);}
+    40% {transform: scaleX(-1) translateX(-100px);}
+    60% {transform: scaleX(1);}
+    80% {transform: scaleX(1) translateX(-100px);}
+    100% {transform: scaleX(1) translateX(0px);}
+}
+
 /* GAME PROPER */
 #directions {
     width: 70vw; right: 15vw; position: fixed; top: 3vh; 
@@ -99,12 +124,14 @@ li.code_area {
     padding: 1%; border-radius: 5px;
 }
 
+/* PROGRESS BAR */ 
 #progress_bar {
     background-color: #262626;
     position: absolute; display: flex; 
     height: 5vh; width: 87vw; 
     right: 6.5vw; bottom: 3vh; 
     border-radius: 5px; 
+    border-style: solid; border-color: #262626;
 }
 
 #bar1 {
@@ -122,14 +149,6 @@ li.code_area {
     width: 29vw; 
 }
 
-button {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
-    border-style: none;
-    border-radius: 5px;
-    margin: 5px; padding: 5px;  
-}
-
 /* LEVEL-SPECIFIC STYLING */
 
 button.level1 {
@@ -140,27 +159,4 @@ button.level1 {
 button.level2 {
     background-color: #08ff98;
     color: #262626;
-}
-
-.level1 {
-    color: #262626; background-color: white;
-}
-
-.level2 {
-    color: white; background-color: #262626;
-}
-
-.level2#code_area {
-    color: #262626; background-color: white;
-}
-
-.level2#directions {
-    color: #262626;
-    z-index: 1200; 
-}
-
-.level1#directions {
-    background-color: #262626;
-    color: white; 
-    z-index: 1200; 
 }

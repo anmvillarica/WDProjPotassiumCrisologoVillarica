@@ -1,6 +1,10 @@
-const LEVEL1_STR = ["transform:", "0,0,255", "}"]
-const LEVEL2_STR = ["document.getElementbyId", "i = 0", "break"]
-const LEVEL3_STR = ["font-family:", "align-items:", "flexbox"]
+const LEVEL1_STR = ["transform:", "0,0,255", "}"];
+const LEVEL2_STR = ["document.getElementById", "=", "break;"];
+const LEVEL3_STR = ["font-family:", "align-items:", "flexbox"];
+
+const LEVEL_CLRS = ["#579dff", "#08ff98", "#ffee0b"];
+const LEVEL_ANIMATIONS = ["1s ease level1animation", "5s ease level2animation 3", "1s ease level3animation"];
+
 var levelSelector = 0; 
 
 var sbt = document.getElementById("submit_btn");
@@ -45,22 +49,25 @@ function checkInput(level){
     }
 
     if (incorrect.length == 1)
-        bar2.style.backgroundColor = "white"
+        bar2.style.backgroundColor = LEVEL_CLRS[level - 1];
     if (incorrect.length <= 2)
     {
-        bar1.style.backgroundColor = "white";
+        bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
     }
     if (incorrect.length == 0)
     {
-        bar1.style.backgroundColor = "white";
-        bar2.style.backgroundColor = "white";
-        bar3.style.backgroundColor = "white";
+        bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
+        bar2.style.backgroundColor = LEVEL_CLRS[level - 1];
+        bar3.style.backgroundColor = LEVEL_CLRS[level - 1];
 
-        sprite.style.animation = `1s ease level1animation`;
-        setTimeout(() => {
-            sprite.innerHTML = "<img src='../media/sprites/pengy2.png' alt='Pengy'>";
-            sprite.style.transform = `translateX(100px)`;
-            }, 1000);
+        sprite.style.animation = LEVEL_ANIMATIONS[level - 1];
+        if (level == 1)
+        {
+            setTimeout(() => {
+                sprite.innerHTML = "<img src='../media/sprites/pengy2.png' alt='Pengy'>";
+                sprite.style.transform = `translateX(100px)`;
+                }, 1000);
+        }
     }
 }
 

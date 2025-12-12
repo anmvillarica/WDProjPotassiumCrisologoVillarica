@@ -13,7 +13,7 @@
     </head>
 
     <body style="background-image: url(../media/game_bgs/pondbg.png); background-size: contain; background-repeat: repeat-x;">
-        <header class="level2"> 
+        <header> 
             <ul class="navbar">
                 <li id="home"><a href="../index.html">
                 <i class="fa fa-fw fa-home homeicon"></i>
@@ -24,7 +24,7 @@
             </ul>
         </header>
 
-        <div id="directions" class="level2">
+        <div id="directions">
             <h3>Make the sprite swim (move) to the right and left for 3 laps!</h3>
         </div>
         
@@ -32,24 +32,29 @@
             <img src="../media/sprites/duck.png" alt="Ducky">
         </div>
 
-        <div id="code_area" class="level2">
+        <div id="code_area">
             <h2>Complete the code!</h2>
             <span>
                 <h3>level2.js</h4>
+                <br>
                 <ul style="list-style-type: none;">
                     <li>
-                        <p>var duck = </p>
+                        <p>var duck =
                         <input id="blank1" type="text">
-                        <p>("duck");</p>
+                        ("duck");</p>
                     </li>
                     <li>
-                        <p>for let (</p>
+                        <p>for (let i
                         <input id="blank2">
-                        <p>; i < 3; i++) {<p>
+                        0; i < 5; i++) {<p>
                     </li>
-                    <li><input id="blank3"></li>
+                    <li class="indented">duck.style.animation = "5s ease duck_animation";</li>
+                    <li class="indented">if (i == 2)</li>
+                    <li style="text-indent: 50px;"><input id="blank3"></li>
+                    <li>}</li>
                 </ul>
             </span>
+            <br>
             <button class="level2" id="submit_btn" onclick="checkInput(2)">Submit!</button>
             <button class="level2" id="reset_btn" onclick="refresh(2)"><i class="fa fa-refresh"></i></button>
         </div>
