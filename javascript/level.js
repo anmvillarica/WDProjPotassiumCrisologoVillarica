@@ -56,18 +56,7 @@ function checkInput(level){
     }
     if (incorrect.length == 0)
     {
-        bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
-        bar2.style.backgroundColor = LEVEL_CLRS[level - 1];
-        bar3.style.backgroundColor = LEVEL_CLRS[level - 1];
-
-        sprite.style.animation = LEVEL_ANIMATIONS[level - 1];
-        if (level == 1)
-        {
-            setTimeout(() => {
-                sprite.innerHTML = "<img src='../media/sprites/pengy2.png' alt='Pengy'>";
-                sprite.style.transform = `translateX(100px)`;
-                }, 1000);
-        }
+        animationPlay(level);
     }
 }
 
@@ -84,8 +73,25 @@ function refresh(level) {
 
     for (let i = 1; i <= incorrect.length; i++)
         incorrect.pop(); 
+
+    sprite.style.animation = "";
     
     var_name = ""; 
     id = "";
     inp = "";
+}
+
+function animationPlay(level) {
+    bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
+    bar2.style.backgroundColor = LEVEL_CLRS[level - 1];
+    bar3.style.backgroundColor = LEVEL_CLRS[level - 1];
+
+    sprite.style.animation = LEVEL_ANIMATIONS[level - 1];
+    if (level == 1)
+    {
+        setTimeout(() => {
+            sprite.style.transform = `translateX(100px)`;
+            sprite.innerHTML = "<img src='../media/sprites/pengy2.png' alt='Pengy'>";
+            }, 700);
+    }
 }
