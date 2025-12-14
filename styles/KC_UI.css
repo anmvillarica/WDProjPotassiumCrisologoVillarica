@@ -5,10 +5,14 @@
 body {
     width: 100vw;
     margin: 0;
-    background-color: #262626;
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
-    padding-top: 75px; /* make space for fixed navbar */
+    padding-top: 75px;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #579dff;
+    font-size: 19px;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -17,12 +21,41 @@ header {
     align-items: center;
 }
 
+.div {
+    background-color: #579dff;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.paragraph {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.paragraph img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.paragraph p {
+    margin: 0;
+    line-height: 1.6;
+}
+
 /* NAVBAR */
 
 ul.navbar {
     list-style: none;
     margin: 0;
-    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +65,7 @@ ul.navbar {
     height: 70px;
     background-color: #ff54da;
     z-index: 1000;
+    padding: 0;
 }
 
 ul.navbar li {
@@ -46,6 +80,8 @@ ul.navbar a {
     font-size: 26px;
     transition: 0.25s;
     font-weight: bold;
+    display: block;
+    padding: 20px 18px;
 }
 
 ul.navbar a:hover {
@@ -62,24 +98,15 @@ ul.navbar .homeicon {
     line-height: 1;
 }
 
-   /* RESPONSIVE */
-@media (max-width: 800px) {
+.navbar a[aria-current="page"] {
+    background-color: #579dff;
+    color: white;
+    font-weight: bold;
+}
 
-    /* navbar */
-    ul.navbar {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 0;
-    }
-
-    ul.navbar a {
-        font-size: 20px;
-        padding: 6px 12px;
-    }
-
-    ul.navbar .homeicon {
-        font-size: 40px;
-    }
-
-
+.text {
+    background-color: #262626;
+    color: white;
+    flex: 1;
+    padding: 20px 60px;
 }

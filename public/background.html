@@ -8,56 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
     <meta name="author" content="Crisologo & Villarica">
 <style>
-body {
-    min-height: 100vh;
-    margin: 0;
-    background-color: #579dff;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
 
-
+.paragraph {
     display: flex;
-    flex-direction: column;
-}
-
-.navbar a[aria-current="page"] {
-    background-color: #579dff;
-    color: white;
-    font-weight: bold;
-}
-
-.navbar a {
-    display: block;
-    padding: 20px 18px;
-}
-
-.navbar{
-    margin: 0;
-    padding: 0;
-}
-
-.div {
-    background-color: #579dff;
-    font-size: 36px;
-    font-weight: bold;
-    color: white;
-    height: 120px;
-    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
     align-items: center;
-    justify-content: center;
-    margin-top: 0;
 }
 
-.text {
-    background-color: #262626;
-    color: white;
-    flex: 1;
-    padding: 20px;
+.paragraph img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
 }
+
+.paragraph p {
+    margin: 0;
+    line-height: 1.6;
+}
+
 
 </style>
 </head>
@@ -65,12 +36,9 @@ body {
 <body>
     <header>
         <ul class="navbar">
-            <li><a href="../index.html">
-            <i class="fa fa-fw fa-home homeicon"></i>
-            </a></li>
-    
+            <li><a href="../index.html"><i class="fa fa-fw fa-home homeicon"></i></a></li>
             <li><a href="./how2play.html">HOW TO PLAY</a></li>
-            <li><a href="./background.html">BACKGROUND</a></li>
+            <li><a href="./background.html" aria-current="page">BACKGROUND</a></li>
             <li><a href="./aboutus.html">ABOUT US</a></li>
             <li><a href="./references.html">REFERENCES</a></li>
         </ul>
@@ -81,9 +49,38 @@ body {
     </div>
 
     <div class="text">
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
+    <div class="paragraph">
+        <img src="../media/sprites/pengy1.png" alt="pengy">
+        <p>
+            When we were first thinking about what kind of website to make, we both
+            knew that we wanted to make something that was a little complicated.
+            We wanted to be challenged by this project because we knew that we
+            could do it and learn a lot along the way.
+        </p>
     </div>
+
+    <div class="paragraph">
+        <img src="../media/sprites/duck.png" alt="duck">
+        <p>
+            The inspiration for a game came from coding games such as Scratch and
+            Google Doodle: Coding. The concept of making a game that taught the very
+            basics of coding with JavaScript and using HTML was exciting because
+            we hadn’t coded or designed a game before.
+        </p>
+    </div>
+
+    <div class="paragraph">
+        <img src="../media/sprites/dove.png" alt="dove">
+        <p>
+            Overall, we really enjoyed making this project because we were able to
+            learn a lot about what goes into making websites and to a certain
+            extent, games.
+        </p>
+    </div>
+
+</div>
+
     </body>
     </html>
 

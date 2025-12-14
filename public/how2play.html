@@ -8,55 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <meta name="author" content="Crisologo & Villarica">
 <style>
-body {
-    min-height: 100vh;
-    margin: 0;
-    background-color: #579dff;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
 
+.image-row {
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    justify-content: center; 
+    margin: 20px 0;
 }
 
-
-.navbar a[aria-current="page"] {
-    background-color: #579dff;
-    color: white;
-    font-weight: bold;
+.image-row img {
+    width: 80%; 
+    height: auto; 
 }
 
-.navbar a {
-    display: block;
-    padding: 20px 18px;
-}
-
-.navbar{
-    margin: 0;
-    padding: 0;
-}
-
-.div {
-    background-color: #579dff;
-    font-size: 36px;
-    font-weight: bold;
-    color: white;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-}
-
-.text {
-    background-color: #262626;
-    color: white;
-    flex: 1;
-    padding: 20px;
-}
 
 </style>
 </head>
@@ -64,11 +30,8 @@ body {
 <body>
     <header> 
         <ul class="navbar">
-            <li><a href="../index.html">
-            <i class="fa fa-fw fa-home homeicon"></i>
-            </a></li>
-
-            <li><a href="./how2play.html">HOW TO PLAY</a></li>
+            <li><a href="../index.html"><i class="fa fa-fw fa-home homeicon"></i></a></li>
+            <li><a href="./how2play.html" aria-current="page">HOW TO PLAY</a></li>
             <li><a href="./background.html">BACKGROUND</a></li>
             <li><a href="./aboutus.html">ABOUT US</a></li>
             <li><a href="./references.html">REFERENCES</a></li>
@@ -76,11 +39,33 @@ body {
     </header>
 
     <div class="div">
-        INSTRUCTIONS
+        MECHANICS
     </div>
 
     <div class="text">
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+        This website teaches the syntax for very simple HTML and JS codes. 
+        In every level, there is a sprite that needs to be moved in a specific way to complete the level. 
+        <br><br>
+
+        <p>The instructions will be shown at the top of your screen.</p>
+
+        <div class="image-row">
+            <img src="../media/how2play/instructions.png" alt="Instructions">
+        </div>
+
+        <p>At the bottom of the screen, there will be a progress bar that shows how close you are to winning. Complete all three missing pieces to win!</p>
+
+        <div class="image-row">
+            <img src="../media/how2play/progressbar.png" alt="Progress bar">
+        </div>
+        <br><br>
+        Simply complete the code by entering the needed information into the blanks on the box in each level. 
+        You can choose to restart the level by clicking the replay icon at the bottom of each box. 
+        Have fun and enjoy playing our game!
+
+
+    </div>
 
 
     </div>
