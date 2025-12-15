@@ -111,10 +111,16 @@ function animationPlay(level) {
 }
 
 function randomNotif() {
+    notif_bar.style.opacity = "100%";
     notif_bar.innerHTML += `<p>${NOTIFS[notifNo]}</p>`;
 
     notifNo += 1;
 
     if (notifNo == 5)
+    {
         notifNo = 0; 
+        notif_bar = "";
+    }
+
+    setTimeout(() => notif_bar.style.animation = "1s transparency linear", 2000)
 }

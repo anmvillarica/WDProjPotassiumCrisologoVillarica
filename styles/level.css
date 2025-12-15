@@ -173,10 +173,17 @@ button.level3 {
 /* NOTIF BAR */
 
 #notif_bar {
-    width: 10vw; height: 100vw;
+    width: 20vw; height: 100vw;
+    float: right; 
 }
 
 #notif_bar > p {
-    background-color: grey; color: #262626;
+    background-color: lightgray; color: #262626;
+    border: 10px; border-color: #262626; border-radius: 5px;
     margin: 5px; padding: 5px;  
+}
+
+@keyframes transparency {
+    50% {opacity: 0.5;}
+    100% {opacity: 0;}
 }
