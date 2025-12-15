@@ -169,3 +169,14 @@ button.level3 {
     background-color: #ffee0b;
     color: #262626;
 }
+
+/* NOTIF BAR */
+
+#notif_bar {
+    width: 10vw; height: 100vw;
+}
+
+#notif_bar > p {
+    background-color: grey; color: #262626;
+    margin: 5px; padding: 5px;  
+}

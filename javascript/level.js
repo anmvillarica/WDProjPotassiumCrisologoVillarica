@@ -1,6 +1,7 @@
 const LEVEL1_STR = ["transform:", "0,0,255", "}"];
 const LEVEL2_STR = ["document.getElementById", "=", "break;"];
 const LEVEL3_STR = ["rotate(-90deg);", "align-items", "flexbox;"];
+const NOTIFS = ["Parang hindi ata T-T", "Kaya mo iyan", "Eto nanaman tayo", "I believe in you", "You'll never succeed if you never try"];
 
 const LEVEL_CLRS = ["#579dff", "#08ff98", "#ffee0b"];
 const LEVEL_ANIMATIONS = ["1s ease level1animation", "5s ease level2animation 3", "1s ease level3animation"];
@@ -16,10 +17,12 @@ var bar2 = document.getElementById("bar2");
 var bar3 = document.getElementById("bar3");
 
 var progress_bar = document.getElementById("progress_bar");
+var notif_bar = document.getElementById("notif_bar"); 
 
 var var_name = ""; 
 var id = "";
 var inp = "";
+var notifNo = 0;
 
 var incorrect = [];
 
@@ -55,6 +58,7 @@ function checkInput(level){
     if (incorrect.length <= 2)
     {
         bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
+        randomNotif();
     }
     if (incorrect.length == 0)
     {
@@ -104,4 +108,13 @@ function animationPlay(level) {
             sprite.innerHTML = "<img src='../media/sprites/pengy2.png' alt='Pengy'>";
             }, 700);
     }
+}
+
+function randomNotif() {
+    notif_bar.innerHTML += `<p>${NOTIFS[notifNo]}</p>`;
+
+    notifNo += 1;
+
+    if (notifNo == 5)
+        notifNo = 0; 
 }
