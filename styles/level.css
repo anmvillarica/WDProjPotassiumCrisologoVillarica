@@ -111,7 +111,9 @@ li.code_area {
 }
 
 @keyframes level3animation {
-    100% {transform: rotate(-90deg);}
+    33% {transform: rotate(-90deg);}
+    66% {display: flexbox;}
+    100% {align-items: center;}
 }
 
 /* GAME PROPER */

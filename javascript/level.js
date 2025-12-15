@@ -74,18 +74,14 @@ function checkInput(level){
     if (incorrect.length <= 2)
     {
         bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
-        randomNotif();
     }
     if (incorrect.length == 0)
     {
-        if (level == 3)
-        {
-            sprite.style.display = "flexbox";
-            sprite.style.alignItems = "center";
-        }
-
         animationPlay(level);
     }
+
+    if (incorrect.length != 0)
+        randomNotif();
 }
 
 function refresh(level) {    
@@ -139,4 +135,5 @@ function randomNotif() {
     }
 
     setTimeout(() => notif_bar.style.animation = "1s transparency linear", 2000)
+    setTimeout(() => notif_bar.style.opacity = "0", 3000)
 }
