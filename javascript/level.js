@@ -26,6 +26,22 @@ var notifNo = 0;
 
 var incorrect = [];
 
+// MUSIC STUFF
+const music = document.getElementById("music");
+const btn = document.getElementById("musicbutton");
+const icon = btn.querySelector("i");
+
+btn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        btn.src = "volume-on.svg";
+    } else {
+        music.pause();
+        btn.src = "volume-off.svg";
+    }
+});
+
+
 function checkInput(level){
     sbt.style.backgroundColor = "grey";
 
