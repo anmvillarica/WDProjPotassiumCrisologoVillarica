@@ -7,22 +7,24 @@ function createNavBar(page) {
     header.innerHTML += "<ul class='navbar'></ul>";
 
     var links = document.querySelector('.navbar');
+    var toInpString = "";
 
     for (let i = 0; i < ADDRESSES.length; i++)
     {   
-        links.innerHTML += "<li><a href=`.";
+        toInpString += "<li><a href='.";
 
         // checks if it is the homepage
         if (i == 0)
-            links.innerHTML += `.`;
+            toInpString += ".";
         
-        links.innerHTML += `/${ADDRESSES[i]}.html`;
-        links.innerHTML += "`";
+        toInpString += "/" + ADDRESSES[i] + ".html'";
 
         // checks if it is the current page
         if (i == (page - 1))
-            links.innerHTML += `aria-current="page"`;
+            toInpString += "aria-current='page'";
 
-        links.innerHTML += `">${TITLES[i]}</a></li>`;
+        toInpString += ">" + TITLES[i] + "</a></li>";
     }
+
+    links.innerHTML = toInpString;
 }
