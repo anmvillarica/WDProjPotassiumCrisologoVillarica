@@ -54,3 +54,28 @@ This showcases the different levels that the game has. There will be three level
 > ![Pages Concept Map](./media/back_end/page_map.png "Pages Map")
 >
 > ![Levels Concept Map](./media/back_end/level_map.png "Levels Map")
+
+# Updated Project Proposal
+
+## Final Title: Key CODE
+
+## Features
+### Work in Progress
+- Mobile friendly: will work on laptop and mobile devices
+- All elements will be responsive
+- Saving progress in levels
+- Better notifications
+- Added hints
+
+### Completed features
+- Transitions and animations in the sprites
+- Video game music playing in background
+- Progress bar that updates
+
+## Details
+- Local storage and JavaScript will be used to save progress
+- CSS and HTML will be updated to make the game look smoother and better
+- HTML input and JavaScript will be used for notifications and hints
+
+## Definition of Complete
+All features work as expected and there are very few bugs that do not disrupt user experience
