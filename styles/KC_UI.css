@@ -110,3 +110,10 @@ ul.navbar .homeicon {
     flex: 1;
     padding: 20px 60px;
 }
+
+@media (max-width: 768px) {
+    .level {
+        display: flex; 
+        flex-direction: column;
+    }
+}
