@@ -18,3 +18,5 @@ Bricolage Grotesque (include to head)
 
 Bold Weight: Levels, navbar
 Normal Weight: regular text, citations/references
+
+https://stackoverflow.com/questions/64436334/how-can-i-force-my-web-page-to-force-a-cell-phone-browser-to-be-viewed-in-landsc
