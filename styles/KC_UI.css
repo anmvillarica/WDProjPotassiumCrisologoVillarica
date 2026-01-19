@@ -23,7 +23,7 @@ header {
 
 .div {
     background-color: #579dff;
-    font-size: 36px;
+    font-size: 0.5vmin; 
     font-weight: bold;
     color: white;
     height: 85px;
@@ -77,7 +77,7 @@ ul.navbar li {
 ul.navbar a {
     color: #262626;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 5vmin; 
     transition: 0.25s;
     font-weight: bold;
     display: block;
