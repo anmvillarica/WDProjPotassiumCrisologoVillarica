@@ -1,8 +1,10 @@
 * {
     box-sizing: border-box;
+    margin: 0; padding: 0; 
 }
 
 body {
+    overflow-x:hidden;
     width: 100vw;
     margin: 0;
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -10,7 +12,7 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #579dff;
-    font-size: 19px;
+    font-size: 1.5vw;
     display: flex;
     flex-direction: column;
 }
@@ -23,10 +25,10 @@ header {
 
 .div {
     background-color: #579dff;
-    font-size: 0.5vmin; 
+    font-size: 2.5vw; 
     font-weight: bold;
     color: white;
-    height: 85px;
+    height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,8 +63,8 @@ ul.navbar {
     align-items: center;
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 70px;
+    width: 100vw;
+    height: 15vh;
     background-color: #ff54da;
     z-index: 1000;
     padding: 0;
@@ -77,11 +79,12 @@ ul.navbar li {
 ul.navbar a {
     color: #262626;
     text-decoration: none;
-    font-size: 5vmin; 
+    font-size: 2vw; 
     transition: 0.25s;
     font-weight: bold;
     display: block;
-    padding: 20px 18px;
+    padding: 2vw 13vh; 
+    margin: 0; 
 }
 
 ul.navbar a:hover {
@@ -89,12 +92,12 @@ ul.navbar a:hover {
 }
 
 ul.navbar i {
-    font-size: 40px;
+    font-size: 2.5vw;
     line-height: 1;
 }
 
 ul.navbar .homeicon {
-    font-size: min(55px, 8vw);
+    font-size: min(5vw, 8vw);
     line-height: 1;
 }
 
