@@ -38,10 +38,6 @@ This page will introduce the users to us, the creators of the game. This will sh
 
 ![About Us Page Layout](./media/back_end/au_layout.png "About Us Layout")
 
-### Citations 
-This page will show all of our references, images, videos, code snippets that we have used in this project. 
-
-![Citations Page Layout](./media/back_end/c_layout.png "Citations Layout")
 
 ### Levels (Easy, Medium, Hard)
 This showcases the different levels that the game has. There will be three levels of increasing difficulty. The player will be able to unlock the next level after completing the previous level.
@@ -79,3 +75,10 @@ This showcases the different levels that the game has. There will be three level
 
 ## Definition of Complete
 All features work as expected and there are very few bugs that do not disrupt user experience
+
+# References
+Yavg. (2020, October 20). How can I force my web page to force a cell phone browser to be viewed in landscape mode? Stack Overflow. https://stackoverflow.com/questions/64436334/how-can-i-force-my-web-page-to-force-a-cell-phone-browser-to-be-viewed-in-landsc
+
+Dan. (n.d.). Detect viewport orientation, if orientation is Portrait display alert message advising user of instructions. Stack Overflow. https://stackoverflow.com/questions/4917664/detect-viewport-orientation-if-orientation-is-portrait-display-alert-message-ad
+
+W3Schools.com. (n.d.). https://www.w3schools.com/jsref/prop_win_localstorage.asp
