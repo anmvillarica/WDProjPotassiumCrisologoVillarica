@@ -15,7 +15,7 @@ body {
 
 button {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
+    font-size: 2vw;
     border-style: none;
     border-radius: 5px;
     margin: 5px; padding: 5px;  
@@ -43,7 +43,7 @@ ul.navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: 12vh;
     z-index: 1000;
     gap: 82vw; 
 }
@@ -51,7 +51,7 @@ ul.navbar {
 ul.navbar li {
     margin: 0 10px;
     display: flex;
-    padding: 5px 5px;
+    padding: 1vw 1vw;
 }
 
 ul.navbar a {
@@ -63,7 +63,7 @@ ul.navbar a {
 }
 
 ul.navbar i {
-    font-size: 40px;
+    font-size: 2.5vw; 
     line-height: 1;
 }
 
@@ -73,7 +73,7 @@ ul.navbar .homeicon {
 }
 
 #level_details {
-    margin: 5px; 
+    margin: auto; 
 }
 
 /* INSTRUCTIONS */
@@ -118,10 +118,12 @@ li.code_area {
 
 /* GAME PROPER */
 #directions {
-    width: 70vw; right: 15vw; position: fixed; top: 3vh; 
+    width: 70vw; right: 15vw; position: fixed; top: 1vh;
+    height: 10vh; 
     text-align: center; 
     border-radius: 5px;
     background-color: white;
+    font-size: smaller;
 }
 #code_area {
     position: absolute; 
