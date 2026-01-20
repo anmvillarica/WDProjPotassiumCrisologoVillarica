@@ -178,10 +178,10 @@ button.level3 {
 #notif_bar {
     width: 20vw; height: 100vw;
     float: right; 
-    background-color: white;
 }
 
 #notif_bar > p {
+    z-index: 100000;
     background-color: lightgray; color: #262626;
     border: 10px; border-color: #262626; border-radius: 5px;
     margin: 5px; padding: 5px;  
