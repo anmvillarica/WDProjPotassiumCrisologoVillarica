@@ -9,8 +9,6 @@ body {
     background-color: white;
     width: 100vw; height: 100vh;
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
-    padding-top: 12vh; /* make space for fixed navbar */
 }
 
 button {
