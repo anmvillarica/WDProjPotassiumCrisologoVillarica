@@ -135,7 +135,7 @@ function randomNotif() {
     }
 
     setTimeout(() => notif_bar.style.animation = "1s transparency linear", 2000)
-    setTimeout(() => notif_bar.style.opacity = "0", 3000)
+    setTimeout(() => notif_bar.style.opacity = "0", 5000)
 }
 
 // local storage fcns

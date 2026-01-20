@@ -61,13 +61,13 @@ This showcases the different levels that the game has. There will be three level
 
 ## Features
 ### Work in Progress
-- Mobile friendly: will work on laptop and mobile devices
-- All elements will be responsive
-- Saving progress in levels
 - Better notifications
 - Added hints
 
 ### Completed features
+- Mobile friendly: will work on laptop and mobile devices
+- All elements will be responsive
+- Saving progress in levels
 - Transitions and animations in the sprites
 - Video game music playing in background
 - Progress bar that updates

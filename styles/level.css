@@ -9,7 +9,7 @@ body {
     background-color: white;
     width: 100vw; height: 100vh;
     font-family: 'Bricolage Grotesque', sans-serif;
-    background-size: auto; background-repeat: repeat-x;
+    background-size: contain; background-repeat: repeat-x;
 }
 
 button {
@@ -175,17 +175,24 @@ button.level3 {
     color: #262626;
 }
 
-/* NOTIF BAR */
+@media (max-width: 613px) {
+    body {
+        background-size: cover;
+    }
+}   
 
-#notif_bar {
+/* NOTIF BAR - style to be fixed*/ 
+
+/* #notif_bar {
+    top: 12vh; 
     width: 20vw; height: 100vw;
     float: right; 
-    background-color: aliceblue;
+    opacity: 0; 
 }
 
 #notif_bar > p {
     z-index: 100000;
-    background-color: lightgray; color: #262626;
+    color: white; background-color: #262626;
     border: 10px; border-color: #262626; border-radius: 5px;
     margin: 5px; padding: 5px;  
 }
@@ -194,5 +201,7 @@ button.level3 {
     50% {opacity: 0.5;}
     100% {opacity: 0;}
 }
+
+*/
 
 
