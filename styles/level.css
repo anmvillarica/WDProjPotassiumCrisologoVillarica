@@ -10,15 +10,16 @@ body {
     width: 100vw; height: 100vh;
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 22px;
-    padding-top: 75px; /* make space for fixed navbar */
+    padding-top: 12vh; /* make space for fixed navbar */
 }
 
 button {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     border-style: none;
     border-radius: 5px;
-    margin: 5px; padding: 5px;  
+    margin: 1vh; padding: 5px;
+    height: auto; 
 }
 
 #directions {
@@ -27,7 +28,7 @@ button {
 }
 
 .indented {
-    text-indent: 25px; 
+    text-indent: 5vw; 
 }
 
 /* NAVBAR */
@@ -36,7 +37,7 @@ ul.navbar {
     background-color: #262626; color: white; 
     list-style: none;
     margin: 0;
-    padding: 0 20px;
+    padding-right: 5vw; padding-left: 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +58,7 @@ ul.navbar li {
 ul.navbar a {
     color: inherit; 
     text-decoration: none;
-    font-size: 26px;
+    font-size: 2vw;
     transition: 0.25s;
     font-weight: bold;
 }
@@ -72,18 +73,8 @@ ul.navbar .homeicon {
     line-height: 1;
 }
 
-#level_details {
-    margin: auto; 
-}
-
-/* INSTRUCTIONS */
-
-ul.code_area {
-    list-style-type: ">";
-}
-
-li.code_area {
-    display: flex; 
+p#level_details {
+    font-size: smaller;
 }
 
 /* SPRITE */
@@ -126,10 +117,20 @@ li.code_area {
     font-size: smaller;
 }
 #code_area {
+    font-size: smaller; 
     position: absolute; 
-    right: 20vw; top: 20vh; 
+    right: 5vw; top: 20vh; 
     color: white; background-color: #262626;
     padding: 1%; border-radius: 5px;
+    height: 60vh; width: 45vw; 
+}
+
+li {
+    display: flex; 
+}
+
+input {
+    width: 10vw;
 }
 
 /* PROGRESS BAR */ 
@@ -179,6 +180,7 @@ button.level3 {
 #notif_bar {
     width: 20vw; height: 100vw;
     float: right; 
+    background-color: white;
 }
 
 #notif_bar > p {
