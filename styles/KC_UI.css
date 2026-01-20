@@ -8,7 +8,7 @@ body {
     width: 100vw;
     margin: 0;
     font-family: 'Bricolage Grotesque', sans-serif;
-    padding-top: 75px;
+    padding-top: 15vh;
     min-height: 100vh;
     margin: 0;
     background-color: #579dff;
@@ -83,7 +83,7 @@ ul.navbar a {
     transition: 0.25s;
     font-weight: bold;
     display: block;
-    padding: 2vw 13vh; 
+    padding: 6.5vh 2vw; 
     margin: 0; 
 }
 
@@ -119,14 +119,9 @@ ul.navbar .homeicon {
         display: flex; 
         flex-direction: column;
     }
-}
 
-@media only screen and (orientation: portrait) and (min-width: 480px){
-    body {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        transform: rotate(90deg);
+    ul.navbar {
+        font-size: 5vw; 
+        gap: 1vw;
     }
-}
+};

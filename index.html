@@ -19,7 +19,7 @@ body{
 ul.navbar a {
     color: #262626;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 2vw;
     padding: 10px 18px;
     border-radius: 10px;
     transition: 0.25s;
@@ -27,9 +27,10 @@ ul.navbar a {
 }
 
 .titleart {
-    width: auto; height: 80vh; 
+    width: 70vw; height: auto; 
     display: block;
     margin: auto;
+    padding: 0; 
 }
 
 /* LEVELS */
@@ -40,14 +41,15 @@ ul.level {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 5vw;
     width: 100%;
 }
 
 ul.level li {
     text-decoration: none;
-    width: 210px;
-    height: 115px;
+    width: 20vw;
+    height: 25vh;
+    margin-bottom: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +80,7 @@ ul.level a:hover {
             <i class="fa fa-fw fa-home homeicon"></i>
             </a></li>
 
-            <li><a href="./public/how2play.html">HOW TO PLAY</a></li>
+            <li><a href="./public/how2play.html">INSTRUCTIONS</a></li>
             <li><a href="./public/background.html">BACKGROUND</a></li>
             <li><a href="./public/aboutus.html">ABOUT US</a></li>
         </ul>
@@ -93,5 +95,11 @@ ul.level a:hover {
         <li style="background-color:#08ff98"><a href="./public/level2.html"> LEVEL 2 <br> [MEDIUM]</a></li>
         <li style="background-color:#ffee0b"><a href="./public/level3.html"> LEVEL 3 <br> [HARD]</a></li>
     </ul>
+
+    <script>
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            alert("Please use landscape mode! 😊")
+        }
+    </script>
     </body>
     </html>
