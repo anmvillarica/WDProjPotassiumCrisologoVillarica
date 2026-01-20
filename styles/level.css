@@ -183,15 +183,15 @@ button.level3 {
 
 /* NOTIF BAR - style to be fixed*/ 
 
-/* #notif_bar {
-    top: 12vh; 
+#notif_bar {
+    z-index: 100000;
+    top: 20vh; 
     width: 20vw; height: 100vw;
     float: right; 
-    opacity: 0; 
 }
 
 #notif_bar > p {
-    z-index: 100000;
+    z-index: 200000;
     color: white; background-color: #262626;
     border: 10px; border-color: #262626; border-radius: 5px;
     margin: 5px; padding: 5px;  
@@ -201,7 +201,5 @@ button.level3 {
     50% {opacity: 0.5;}
     100% {opacity: 0;}
 }
-
-*/
 
 
