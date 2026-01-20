@@ -81,7 +81,7 @@ function checkInput(level){
     }
 
     if (incorrect.length != 0)
-        randomNotif();
+        //randomNotif();
 }
 
 function refresh(level) {    
