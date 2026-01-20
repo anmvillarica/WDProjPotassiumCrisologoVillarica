@@ -137,3 +137,36 @@ function randomNotif() {
     setTimeout(() => notif_bar.style.animation = "1s transparency linear", 2000)
     setTimeout(() => notif_bar.style.opacity = "0", 3000)
 }
+
+// local storage fcns
+function saveText() {
+  const data = {
+    blank1: document.getElementById("blank1").value,
+    blank2: document.getElementById("blank2").value,
+    blank3: document.getElementById("blank3").value
+  };
+
+  localStorage.setItem("savedText", JSON.stringify(data));
+  alert("Text saved!");
+}
+
+// persists the text on load
+window.onload = function () {
+  const storedText = localStorage.getItem("savedText");
+
+  if (storedText) {
+    const data = JSON.parse(storedText);
+    document.getElementById("blank1").value = data.blank1 || "";
+    document.getElementById("blank2").value = data.blank2 || "";
+    document.getElementById("blank3").value = data.blank3 || "";
+  }
+};
+
+function clearText(){
+    localStorage.clear();
+    blank1.value = '';
+    blank2.value = '';
+    blank3.value = '';
+    alert('Cleared!')
+}
+

@@ -59,9 +59,10 @@
                     <li>setTimeout(() => {console.log("...");}, 5000);</li>
                     <li>}</li>
                 </ul>
-                <button class="level2" id="submit_btn" onclick="checkInput(2)">Submit!</button>
-                <button class="level2" id="reset_btn" onclick="refresh(2)"><i class="fa fa-refresh"></i></button>
-            </span>
+                 <button class="level2" id="submit_btn" onclick="checkInput(2); saveText()">Submit!</button>
+            <button class="level2" id="reset_btn" onclick="refresh(2); clearText()"><i class="fa fa-refresh"></i></button>
+            <a href="level3.html" target="_blank"><button class="level2" id="nextlvl_btn" onclick="clearText()">Next Level!</button></a>
+            <br>
         </div>
 
         <div id="progress_bar">
