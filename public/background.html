@@ -72,11 +72,25 @@
         </p>
     </div>
 
-</div>
+    </div>
+
+    <hr>
+    <footer>
+        <h3>References</h3>
+        <p>Yavg. (2020, October 20). How can I force my web page to force a cell phone browser to be viewed in landscape mode? Stack Overflow. https://stackoverflow.com/questions/64436334/how-can-i-force-my-web-page-to-force-a-cell-phone-browser-to-be-viewed-in-landsc</p>
+        <p>Dan. (n.d.). Detect viewport orientation, if orientation is Portrait display alert message advising user of instructions. Stack Overflow. https://stackoverflow.com/questions/4917664/detect-viewport-orientation-if-orientation-is-portrait-display-alert-message-ad</p>
+        <p>W3Schools.com. (n.d.). https://www.w3schools.com/jsref/prop_win_localstorage.asp</p>
+        <br>
+        <b><p>&copy; <span id="year"></span> Crisologo & Villarica</p></b>
+    </footer>
 
     <script src="../javascript/navbar.js">
     </script>
     <script>createNavBar(3);</script>
+    <script>
+        // Auto-set current year 
+        document.getElementById('year').textContent = new Date().getFullYear(); 
+    </script> 
     </body>
     </html>
 

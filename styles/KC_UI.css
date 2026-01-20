@@ -114,6 +114,11 @@ ul.navbar .homeicon {
     padding: 20px 60px;
 }
 
+footer {
+    text-align: center;
+    padding: 2vw 5vh;
+}
+
 @media (max-width: 768px) {
     .level {
         display: flex; 

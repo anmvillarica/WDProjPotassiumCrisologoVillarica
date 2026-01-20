@@ -80,7 +80,7 @@ function checkInput(level){
         animationPlay(level);
     }
 
-    if (incorrect.length != 0)
+    //if (incorrect.length != 0)
         //randomNotif(); to be fixed *
 }
 
