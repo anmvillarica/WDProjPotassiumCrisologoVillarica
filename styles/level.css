@@ -9,6 +9,7 @@ body {
     background-color: white;
     width: 100vw; height: 100vh;
     font-family: 'Bricolage Grotesque', sans-serif;
+    background-size: auto; background-repeat: repeat-x;
 }
 
 button {
@@ -72,7 +73,7 @@ ul.navbar .homeicon {
 }
 
 p#level_details {
-    font-size: smaller;
+    font-size: 1.75vw;
 }
 
 /* SPRITE */
@@ -112,10 +113,11 @@ p#level_details {
     text-align: center; 
     border-radius: 5px;
     background-color: white;
-    font-size: smaller;
+    font-size: 1.5vw;  
 }
+
 #code_area {
-    font-size: smaller; 
+    font-size: 1.5vw; 
     position: absolute; 
     right: 5vw; top: 20vh; 
     color: white; background-color: #262626;
@@ -178,6 +180,7 @@ button.level3 {
 #notif_bar {
     width: 20vw; height: 100vw;
     float: right; 
+    background-color: aliceblue;
 }
 
 #notif_bar > p {
