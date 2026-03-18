@@ -76,6 +76,14 @@ This showcases the different levels that the game has. There will be three level
 ## Definition of Complete
 All features work as expected and there are very few bugs that do not disrupt user experience
 
+# FINAL MODIFICATION PROPOSAL
+
+## Narrative on Updating and Deleting Information 
+- Add the option to sign in to the game. The user should be able to log in and log out using a password and a username of their choice. Logging in will restore the user's progress across sessions or devices. Once the user opens the game, they will be given the option to make an account or play without logging in. Playing without logging in will not store the user's progress and data in the game.
+- Add an option to reset all game data in the event that the user wants to retry the game or clear all their progress. This gives users the chance to redo the game from scratch as this option will also clear all localStorage data such as the answers to the game. However, this will not clear the user's account.
+- Visually show that a user has already completed a level. Completed levels will be marked by a checkmark, symbol, or have a different color. This clearly shows the user's progress throughout the game.
+
+
 # References
 Yavg. (2020, October 20). How can I force my web page to force a cell phone browser to be viewed in landscape mode? Stack Overflow. https://stackoverflow.com/questions/64436334/how-can-i-force-my-web-page-to-force-a-cell-phone-browser-to-be-viewed-in-landsc
 
