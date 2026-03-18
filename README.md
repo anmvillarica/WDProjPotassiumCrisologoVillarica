@@ -81,7 +81,17 @@ All features work as expected and there are very few bugs that do not disrupt us
 ## Narrative on Updating and Deleting Information 
 - Add the option to sign in to the game. The user should be able to log in and log out using a password and a username of their choice. Logging in will restore the user's progress across sessions or devices. Once the user opens the game, they will be given the option to make an account or play without logging in. Playing without logging in will not store the user's progress and data in the game.
 - Add an option to reset all game data in the event that the user wants to retry the game or clear all their progress. This gives users the chance to redo the game from scratch as this option will also clear all localStorage data such as the answers to the game. However, this will not clear the user's account.
-- Visually show that a user has already completed a level. Completed levels will be marked by a checkmark, symbol, or have a different color. This clearly shows the user's progress throughout the game.
+- Visually show that a user has already completed a level. Completed levels will be marked by a ca different color. This clearly shows the user's progress throughout the game.
+
+### Homepage [w/o an account]
+![Homepage Wireframes Without Account](./media/back_end/homepage_frame_noacc.png)
+![Homepage Menu Wireframes Without Account](./media/back_end/homepage_frame_menu_noacc.png)
+
+### Homepage [w/ an account]
+![Homepage Wireframes With Account](./media/back_end/homepage_frame_wacc.png)
+![Homepage Menu Wireframes With Account](./media/back_end/homepage_frame_menu_wacc.png)
+
+
 
 
 # References
