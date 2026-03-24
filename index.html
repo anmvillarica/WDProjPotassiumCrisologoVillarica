@@ -73,7 +73,7 @@ ul.level a:hover {
 </style>
 </head>
 
-<body>
+<body onload="getAcc()">
     <header> 
         <ul class="navbar">
             <li><a href="index.html">
@@ -86,6 +86,9 @@ ul.level a:hover {
         </ul>
     </header>
 
+    <div id="acc_details">
+    </div>
+
     <div>
         <img class="titleart" src="./media/homepage/title_art.png" alt="Title Art">
     </div>
@@ -97,6 +100,114 @@ ul.level a:hover {
     </ul>
 
     <script>
+        var acc_space = document.getElementById('acc_details');
+        const LEVEL = ["Lvl1", "Lvl2", "Lvl3"];
+
+        function getAcc() {
+            var users = JSON.parse(localStorage.getItem('users')) || []; 
+            var currUser = Number(localStorage.getItem("curr")) || 0; 
+
+            if (currUser != 0)
+            {   const acc_details = users[currUser - 1]; 
+
+                var toAdd = "";
+
+                toAdd += `<h3>${acc_details.userName}</h3>`;
+
+                for (let i = 0; i < 3; i++)
+                {
+                    toAdd += `<p>${LEVEL[i]}: ${acc_details[LEVEL[i]]}%</p>`;
+                }
+
+                toAdd += "<button onlick='clearAcc()'>Clear Data</button>";
+                toAdd += "<button onclick='makeAcc()'Make New Account</button>";
+                toAdd += "<button onclick='logIn()'>Change Account</button>";
+            }
+            else {
+                var toAdd = "";
+
+                toAdd += "<button onclick='logIn()'>Log In</button>";
+                toAdd += "<button onclick='makeAcc()'>Make an Account</button>";
+                toAdd += "<button onclick='localStorage.clear()'>Delete ALL Data</button>";
+            }
+
+            acc_space.innerHTML = toAdd; 
+        }
+
+        function makeAcc() {
+            var newAcc = {}; 
+            
+            newAcc.userName = window.prompt("Enter a username: ", "Hawak_Mo_Ba_Ang_Beat");
+            newAcc.passWord = window.prompt("Enter a password: ", "Hawak_Mo_Ba_Ang_Gabi");
+            
+            for (idx in LEVEL){
+                newAcc[LEVEL[idx]] = 0; 
+            }
+
+            console.log(newAcc);
+
+            var users = JSON.parse(localStorage.getItem("users")) || []; 
+
+            users.push(newAcc);
+
+            console.log(users);
+
+            localStorage.setItem("users", JSON.stringify(users));
+            for (idx in users)
+            {
+                if (users[idx] == newAcc)
+                    localStorage.setItem("curr", idx + 1);
+            }
+
+            getAcc();
+        }
+
+        function logIn() {
+            var users = JSON.parse(localStorage.getItem("users")) ||  [];
+            var tryUser = {};
+
+            if (users.length) {
+                var notCorrect = true; 
+
+                while (notCorrect) {
+                    tryUser.userName = window.prompt("Enter your username: ");
+                    tryUser.passWord = window.prompt("Enter your password: ");
+
+                    for (i in users) {
+                        if (users[i].userName == tryUser.username && users[i].password == tryUser.password){
+                            localStorage.setItem("curr", i + 1);
+                            notCorrect = false;
+                            getAcc();
+
+                            break; 
+                        }
+                    }
+                }
+            }
+            else {
+                alert("Please make an account first! 🙏");
+            }
+        }
+
+        function clearAcc() {
+            var users = JSON.parse(localStorage.getItem("users")) ||  [];
+            var currUser = Number(localStorage.getItem("curr")) || 0;
+
+            if (currUser != 0) {
+                for (i in LEVEL) {
+                    users[currUser - 1][LEVEL[i]] = 0;
+                }
+
+                localStorage.setItem("users", JSON.stringify(users));
+
+                console.log("cleared");
+                getAcc();
+            }
+            else {
+                alert("Please log in first! 🙏");
+            }
+        }
+            
         if (window.matchMedia("(orientation: portrait)").matches) {
             alert("Please use landscape mode! 😊")
         }

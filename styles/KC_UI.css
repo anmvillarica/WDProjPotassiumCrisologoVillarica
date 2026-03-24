@@ -130,3 +130,11 @@ footer {
         gap: 1vw;
     }
 };
+
+#acc_details {
+    display: block; 
+    width: 20vw; 
+    position: sticky; 
+    background-color:  #d9d9d9;
+    z-index: 20000; 
+}
