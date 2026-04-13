@@ -15,6 +15,7 @@
 body{
     background-color: #262626;
 }
+
 /* NAVBAR */
 ul.navbar a {
     color: #262626;
@@ -27,33 +28,25 @@ ul.navbar a {
 }
 
 .titleart {
-    width: 70vw; height: auto; 
+    width: 70vw;
     display: block;
     margin: auto;
-    padding: 0; 
 }
 
 /* LEVELS */
 ul.level {
     list-style: none;
-    margin: auto;
-    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 5vw;
-    width: 100%;
 }
 
 ul.level li {
-    text-decoration: none;
     width: 20vw;
     height: 25vh;
-    margin-bottom: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 ul.level a {
@@ -61,156 +54,186 @@ ul.level a {
     color: #262626;
     font-weight: bold;
 }
-
-ul.level a:hover {
-    color: white;
-    transition: 0.25s;
-}
-
-</style>
-
-</head>
 </style>
 </head>
 
-<body onload="getAcc()">
-    <header> 
-        <ul class="navbar">
-            <li><a href="index.html">
-            <i class="fa fa-fw fa-home homeicon"></i>
-            </a></li>
+<body>
+<header> 
+    <ul class="navbar">
+        <li><a href="index.html">
+        <i class="fa fa-fw fa-home homeicon"></i>
+        </a></li>
 
-            <li><a href="./public/how2play.html">INSTRUCTIONS</a></li>
-            <li><a href="./public/background.html">BACKGROUND</a></li>
-            <li><a href="./public/aboutus.html">ABOUT US</a></li>
-        </ul>
-    </header>
-
-    <div id="acc_details">
-    </div>
-
-    <div>
-        <img class="titleart" src="./media/homepage/title_art.png" alt="Title Art">
-    </div>
-
-    <ul class="level">
-        <li style="background-color:#579dff"><a href="./public/level1.html"> LEVEL 1 <br> [EASY]</a></li>
-        <li style="background-color:#08ff98"><a href="./public/level2.html"> LEVEL 2 <br> [MEDIUM]</a></li>
-        <li style="background-color:#ffee0b"><a href="./public/level3.html"> LEVEL 3 <br> [HARD]</a></li>
+        <li><a href="./public/how2play.html">INSTRUCTIONS</a></li>
+        <li><a href="./public/background.html">BACKGROUND</a></li>
+        <li><a href="./public/aboutus.html">ABOUT US</a></li>
     </ul>
+</header>
 
-    <script>
-        var acc_space = document.getElementById('acc_details');
+<div id="acc_details"></div>
+
+<img class="titleart" src="./media/homepage/title_art.png">
+
+<ul class="level">
+    <li style="background-color:#579dff">
+        <a href="./public/level1.html">
+            LEVEL 1 <br>[EASY]
+        </a>
+        <p id="prog1" class="progress-text">0%</p>
+    </li>
+
+    <li style="background-color:#08ff98">
+        <a href="./public/level2.html">
+            LEVEL 2 <br>[MEDIUM]
+        </a>
+        <p id="prog2" class="progress-text">0%</p>
+    </li>
+
+    <li style="background-color:#ffee0b">
+        <a href="./public/level3.html">
+            LEVEL 3 <br>[HARD]
+        </a>
+        <p id="prog3" class="progress-text">0%</p>
+    </li>
+</ul>
+
+<script>
+
+        const acc_space = document.getElementById('acc_details');
         const LEVEL = ["Lvl1", "Lvl2", "Lvl3"];
 
-        function getAcc() {
-            var users = JSON.parse(localStorage.getItem('users')) || []; 
-            var currUser = Number(localStorage.getItem("curr")) || 0; 
+function getAcc() {
+    let users = JSON.parse(localStorage.getItem('users')) || []; 
+    let currUser = Number(localStorage.getItem("curr")) || 0;      
+    
+    let toAdd = "";
 
-            if (currUser != 0)
-            {   const acc_details = users[currUser - 1]; 
+    if (currUser != 0 && users[currUser - 1]) {
+        let acc = users[currUser - 1];
 
-                var toAdd = "";
+        toAdd += `<h3 class="username-color">${acc.userName}</h3>`;
+        
+        toAdd += "<div class='acc-actions'>";
+        toAdd += "<button class='auth-btn login-btn' onclick='clearAcc()'>Clear Data</button>";
+        toAdd += "<button class='auth-btn delete-btn' onclick='logOut()'>Log Out</button>";
+        toAdd += "<button class='auth-btn signup-btn' onclick='logIn()'>Change Account</button>";
+        toAdd += "</div>";
+    } 
+    else {
+        toAdd += "<div class='acc-actions'>";
+        toAdd += "<button class='auth-btn login-btn' onclick='logIn()'>Log In</button>";
+        toAdd += "<button class='auth-btn signup-btn' onclick='makeAcc()'>Make an Account</button>";
+        toAdd += "<button class='auth-btn delete-btn' onclick='localStorage.clear(); getAcc();'>Delete ALL Data</button>";
+        toAdd += "</div>";
+    }
 
-                toAdd += `<h3>${acc_details.userName}</h3>`;
-
-                for (let i = 0; i < 3; i++)
-                {
-                    toAdd += `<p>${LEVEL[i]}: ${acc_details[LEVEL[i]]}%</p>`;
-                }
-
-                toAdd += "<button onlick='clearAcc()'>Clear Data</button>";
-                toAdd += "<button onclick='makeAcc()'Make New Account</button>";
-                toAdd += "<button onclick='logIn()'>Change Account</button>";
-            }
-            else {
-                var toAdd = "";
-
-                toAdd += "<button onclick='logIn()'>Log In</button>";
-                toAdd += "<button onclick='makeAcc()'>Make an Account</button>";
-                toAdd += "<button onclick='localStorage.clear()'>Delete ALL Data</button>";
-            }
-
-            acc_space.innerHTML = toAdd; 
-        }
+    acc_space.innerHTML = toAdd; 
+}
 
         function makeAcc() {
-            var newAcc = {}; 
+            let newAcc = {}; 
             
             newAcc.userName = window.prompt("Enter a username: ", "Hawak_Mo_Ba_Ang_Beat");
             newAcc.passWord = window.prompt("Enter a password: ", "Hawak_Mo_Ba_Ang_Gabi");
             
-            for (idx in LEVEL){
-                newAcc[LEVEL[idx]] = 0; 
-            }
+                if (!newAcc.userName || !newAcc.passWord) {
+                    alert("Invalid ❌");
+                    return;
+                }
 
-            console.log(newAcc);
+                for (let i = 0; i < LEVEL.length; i++) {
+                    newAcc[LEVEL[i]] = 0;
+                }
 
-            var users = JSON.parse(localStorage.getItem("users")) || []; 
+                let users = JSON.parse(localStorage.getItem("users")) || [];
+                users.push(newAcc);
 
-            users.push(newAcc);
+                localStorage.setItem("users", JSON.stringify(users));
+                localStorage.setItem("curr", users.length);
 
-            console.log(users);
-
-            localStorage.setItem("users", JSON.stringify(users));
-            for (idx in users)
-            {
-                if (users[idx] == newAcc)
-                    localStorage.setItem("curr", idx + 1);
-            }
-
-            getAcc();
+                getAcc();
+                showProgress();
         }
 
         function logIn() {
-            var users = JSON.parse(localStorage.getItem("users")) ||  [];
-            var tryUser = {};
+                let users = JSON.parse(localStorage.getItem("users")) || [];
 
-            if (users.length) {
-                var notCorrect = true; 
+                if (!users.length) {
+                    alert("Please make an account first! 🙏");
+                    return;
+                }
 
-                while (notCorrect) {
-                    tryUser.userName = window.prompt("Enter your username: ");
-                    tryUser.passWord = window.prompt("Enter your password: ");
+                let userName = prompt("Enter your username:");
+                let passWord = prompt("Enter your password:");
 
-                    for (i in users) {
-                        if (users[i].userName == tryUser.username && users[i].password == tryUser.password){
-                            localStorage.setItem("curr", i + 1);
-                            notCorrect = false;
-                            getAcc();
+                let found = false;
 
-                            break; 
-                        }
+                for (let i = 0; i < users.length; i++) {
+                    if (users[i].userName === userName &&
+                        users[i].passWord === passWord) {
+
+                        localStorage.setItem("curr", i + 1);
+                        found = true;
+                        break;
                     }
                 }
-            }
-            else {
-                alert("Please make an account first! 🙏");
-            }
+
+                if (found) {
+                    getAcc();
+                    showProgress();
+                } else {
+                    alert("Incorrect username or password ❌");
+                }
+}
+
+        function logOut() {
+            localStorage.setItem("curr", 0);
+            getAcc();
+            showProgress();
         }
 
         function clearAcc() {
-            var users = JSON.parse(localStorage.getItem("users")) ||  [];
-            var currUser = Number(localStorage.getItem("curr")) || 0;
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let currUser = Number(localStorage.getItem("curr")) || 0;
 
-            if (currUser != 0) {
-                for (i in LEVEL) {
+            if (currUser !== 0 && users[currUser - 1]) {
+                for (let i = 0; i < LEVEL.length; i++) {
                     users[currUser - 1][LEVEL[i]] = 0;
                 }
 
                 localStorage.setItem("users", JSON.stringify(users));
-
-                console.log("cleared");
                 getAcc();
-            }
+                showProgress();
+            } 
+            
             else {
                 alert("Please log in first! 🙏");
             }
-        }
-            
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            alert("Please use landscape mode! 😊")
-        }
+}
+
+function showProgress() {
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currUser = Number(localStorage.getItem("curr")) || 0;
+
+    if (currUser === 0 || !users[currUser - 1]) return;
+
+    let acc = users[currUser - 1];
+
+    document.getElementById("prog1").innerText = (acc.Lvl1 || 0) + "%";
+    document.getElementById("prog2").innerText = (acc.Lvl2 || 0) + "%";
+    document.getElementById("prog3").innerText = (acc.Lvl3 || 0) + "%";
+}
+
+// auto load
+window.onload = function () {
+    getAcc();
+    showProgress();
+};
+
+// orientation thingy
+if (window.matchMedia("(orientation: portrait)").matches) {
+    alert("Please use landscape mode! 😊");
+}
     </script>
     </body>
     </html>

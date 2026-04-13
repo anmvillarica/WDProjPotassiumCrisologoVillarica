@@ -11,7 +11,6 @@ body {
     padding-top: 15vh;
     min-height: 100vh;
     margin: 0;
-    background-color: #579dff;
     font-size: 1.5vw;
     display: flex;
     flex-direction: column;
@@ -137,4 +136,101 @@ footer {
     position: sticky; 
     background-color:  #d9d9d9;
     z-index: 20000; 
+}
+
+.auth-btn {
+    padding: 10px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.login-btn {
+    background-color: #ffee0b;
+    color: #262626;
+}
+
+.login-btn:hover {
+    background-color: #e9d906;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #ff54da;
+    color: #262626;
+}
+
+.delete-btn:hover {
+    background-color: #fe47d6;
+    transform: scale(1.05);
+}
+
+.signup-btn {
+    background-color: #08ff98;
+    color: #262626;
+}
+
+.signup-btn:hover {
+    background-color: #06df85;
+    transform: scale(1.05);
+}
+
+ul.level li {
+    width: 20vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.progress-text {
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin: 0;
+}
+
+#acc_details {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 0 0 15px 0; 
+    width: fit-content;
+    min-width: 15vw;
+}
+
+/* Container for the buttons */
+.acc-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+#acc_details {
+    display: block; 
+    width: 100vw;
+    padding: 10px 20px;
+    background-color: #262626;
+    position: sticky; 
+    top: 15vh;
+    z-index: 20000; 
+}
+
+.acc-actions .auth-btn {
+    white-space: nowrap; 
+    font-size: 1vw;
+    margin: 0;
+}
+
+.username-color {
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 1.5vw;
 }

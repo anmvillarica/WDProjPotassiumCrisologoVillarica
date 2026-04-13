@@ -45,43 +45,40 @@ btn.addEventListener("click", () => {
 function checkInput(level){
     sbt.style.backgroundColor = "grey";
 
-    for (let i = 0; i < 3; i++)
-    {
-        var_name = "inp" + (i + 1);
+    incorrect = []; // reset
+
+    for (let i = 0; i < 3; i++) { //check all blanks
         id = "blank" + (i + 1);
         inp = document.getElementById(id).value;
 
-        switch(level)
-        {
-            case 1: 
-                if (inp != LEVEL1_STR[i])
-                    incorrect.push(i);
-                break; 
-            case 2: 
-                if (inp != LEVEL2_STR[i])
-                    incorrect.push(i);
-                break; 
-            case 3: 
-                if (inp != LEVEL3_STR[i])
-                    incorrect.push(i);
-                break; 
+        switch(level) { //compares to correct ans
+            case 1:
+                if (inp != LEVEL1_STR[i]) incorrect.push(i);
+                break;
+            case 2:
+                if (inp != LEVEL2_STR[i]) incorrect.push(i);
+                break;
+            case 3:
+                if (inp != LEVEL3_STR[i]) incorrect.push(i);
+                break;
         }
-        
     }
 
-    if (incorrect.length == 1)
+    let correct = 3 - incorrect.length;
+    let progress = Math.round((correct / 3) * 100);
+
+    // save prog
+    saveProgress(level, progress);
+
+    if (incorrect.length == 1) //update bar
         bar2.style.backgroundColor = LEVEL_CLRS[level - 1];
+
     if (incorrect.length <= 2)
-    {
         bar1.style.backgroundColor = LEVEL_CLRS[level - 1];
-    }
-    if (incorrect.length == 0)
-    {
+
+    if (progress === 100) {
         animationPlay(level);
     }
-
-    //if (incorrect.length != 0)
-        //randomNotif(); to be fixed *
 }
 
 function refresh(level) {    
@@ -97,8 +94,7 @@ function refresh(level) {
     bar2.style.backgroundColor = "#262626";
     bar3.style.backgroundColor = "#262626";
 
-    for (let i = 1; i <= incorrect.length; i++)
-        incorrect.pop(); 
+    incorrect = [];
 
     sprite.style.animation = "";
     
@@ -139,34 +135,66 @@ function randomNotif() {
 }
 
 // local storage fcns
-function saveText() {
-  const data = {
-    blank1: document.getElementById("blank1").value,
-    blank2: document.getElementById("blank2").value,
-    blank3: document.getElementById("blank3").value
-  };
+function saveText(level) {
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currUser = Number(localStorage.getItem("curr")) || 0;
 
-  localStorage.setItem("savedText", JSON.stringify(data));
-  alert("Text saved!");
+    if (currUser === 0) return;
+
+    let data = {
+        blank1: document.getElementById("blank1").value,
+        blank2: document.getElementById("blank2").value,
+        blank3: document.getElementById("blank3").value
+    };
+
+    users[currUser - 1]["Lvl" + level + "_text"] = data;
+
+    localStorage.setItem("users", JSON.stringify(users));
 }
 
 // persists the text on load
 window.onload = function () {
-  const storedText = localStorage.getItem("savedText");
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currUser = Number(localStorage.getItem("curr")) || 0;
 
-  if (storedText) {
-    const data = JSON.parse(storedText);
-    document.getElementById("blank1").value = data.blank1 || "";
-    document.getElementById("blank2").value = data.blank2 || "";
-    document.getElementById("blank3").value = data.blank3 || "";
-  }
+    if (currUser === 0) return;
+
+    let level = 1; 
+    let data = users[currUser - 1]["Lvl" + level + "_text"];
+
+    if (data) {
+        document.getElementById("blank1").value = data.blank1 || "";
+        document.getElementById("blank2").value = data.blank2 || "";
+        document.getElementById("blank3").value = data.blank3 || "";
+    }
 };
 
 function clearText(){
-    localStorage.clear();
-    blank1.value = '';
-    blank2.value = '';
-    blank3.value = '';
-    alert('Cleared!')
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currUser = Number(localStorage.getItem("curr")) || 0;
+
+    if (currUser === 0) return;
+
+    delete users[currUser - 1]["Lvl1_text"];
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    document.getElementById("blank1").value = '';
+    document.getElementById("blank2").value = '';
+    document.getElementById("blank3").value = '';
+
+    alert('Cleared!');
 }
 
+function saveProgress(level, progress) {
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currUser = Number(localStorage.getItem("curr")) || 0;
+
+    if (currUser === 0 || !users[currUser - 1]) return;
+
+    let levelKey = "Lvl" + level;
+
+    users[currUser - 1][levelKey] = progress;
+
+    localStorage.setItem("users", JSON.stringify(users));
+}
