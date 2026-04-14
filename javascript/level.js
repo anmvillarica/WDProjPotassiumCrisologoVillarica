@@ -148,17 +148,17 @@ function saveText(level) {
     };
 
     users[currUser - 1]["Lvl" + level + "_text"] = data;
+    console.log(users);
     localStorage.setItem("users", JSON.stringify(users));
 }
 
 // persists the text on load
-window.onload = function () {
+function reload(level) {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let currUser = Number(localStorage.getItem("curr")) || 0;
 
     if (currUser === 0) return;
-
-    let level = 1; 
+ 
     let data = users[currUser - 1]["Lvl" + level + "_text"];
 
     if (data) {

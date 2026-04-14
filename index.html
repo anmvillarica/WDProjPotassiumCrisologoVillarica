@@ -67,6 +67,7 @@ ul.level a {
         <li><a href="./public/how2play.html">INSTRUCTIONS</a></li>
         <li><a href="./public/background.html">BACKGROUND</a></li>
         <li><a href="./public/aboutus.html">ABOUT US</a></li>
+        <li><img href="./media/ducky.PNG" id="pfp"></li>
     </ul>
 </header>
 
@@ -98,7 +99,6 @@ ul.level a {
 </ul>
 
 <script>
-
         const acc_space = document.getElementById('acc_details');
         const LEVEL = ["Lvl1", "Lvl2", "Lvl3"];
 
@@ -181,6 +181,7 @@ function getAcc() {
                 if (found) {
                     getAcc();
                     showProgress();
+                    document.getElementById("pfp").style.backgroundColor = "grey";
                 } else {
                     alert("Incorrect username or password ❌");
                 }
