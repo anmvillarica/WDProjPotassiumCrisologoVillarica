@@ -148,7 +148,6 @@ function saveText(level) {
     };
 
     users[currUser - 1]["Lvl" + level + "_text"] = data;
-
     localStorage.setItem("users", JSON.stringify(users));
 }
 
@@ -169,13 +168,13 @@ window.onload = function () {
     }
 };
 
-function clearText(){
+function clearText(level){
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let currUser = Number(localStorage.getItem("curr")) || 0;
 
     if (currUser === 0) return;
 
-    delete users[currUser - 1]["Lvl1_text"];
+    delete users[currUser - 1][`Lvl${level}_text`];
 
     localStorage.setItem("users", JSON.stringify(users));
 
