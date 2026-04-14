@@ -67,11 +67,11 @@ ul.level a {
         <li><a href="./public/how2play.html">INSTRUCTIONS</a></li>
         <li><a href="./public/background.html">BACKGROUND</a></li>
         <li><a href="./public/aboutus.html">ABOUT US</a></li>
-        <li><img href="./media/ducky.PNG" id="pfp"></li>
+        <li><img src="./media/ducky.PNG" id="pfp" class="menu" onclick="menu()"></li>
     </ul>
 </header>
 
-<div id="acc_details"></div>
+<div id="acc_details" class="menu"></div>
 
 <img class="titleart" src="./media/homepage/title_art.png">
 
@@ -118,6 +118,7 @@ function getAcc() {
         toAdd += "<button class='auth-btn delete-btn' onclick='logOut()'>Log Out</button>";
         toAdd += "<button class='auth-btn signup-btn' onclick='logIn()'>Change Account</button>";
         toAdd += "</div>";
+        document.getElementById("pfp").style.backgroundColor = "#579dff";
     } 
     else {
         toAdd += "<div class='acc-actions'>";
@@ -181,7 +182,6 @@ function getAcc() {
                 if (found) {
                     getAcc();
                     showProgress();
-                    document.getElementById("pfp").style.backgroundColor = "grey";
                 } else {
                     alert("Incorrect username or password ❌");
                 }
@@ -189,6 +189,7 @@ function getAcc() {
 
         function logOut() {
             localStorage.setItem("curr", 0);
+            document.getElementById("pfp").style.backgroundColor = "#262626";
             getAcc();
             showProgress();
         }
@@ -234,6 +235,13 @@ window.onload = function () {
 // orientation thingy
 if (window.matchMedia("(orientation: portrait)").matches) {
     alert("Please use landscape mode! 😊");
+}
+
+function menu(){
+    if (document.getElementById("acc_details").style.display != "block") 
+        document.getElementById("acc_details").style.display = "block"; 
+    else 
+        document.getElementById("acc_details").style.display = "none";     
 }
     </script>
     </body>
